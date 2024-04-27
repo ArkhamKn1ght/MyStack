@@ -40,7 +40,7 @@ public:
 		this->capacity = other.capacity;
 		other.data = nullptr;
 		other.size = 0;
-		other.capacity = 5;
+		other.capacity = 0;
 	}
 	~MyStack() {
 		std::cout << "Destructor" << std::endl;
@@ -80,7 +80,7 @@ public:
 			this->capacity = rhs.capacity;
 			rhs.data = nullptr;
 			rhs.size = 0;
-			rhs.capacity = 5;
+			rhs.capacity = 0;
 		}
 		return *this;
 	}
@@ -140,11 +140,20 @@ int main() {
 			std::cout << newStack.pop();
 		}
         std::cout << std::endl;
+		testStack.push(11);
+		testStack.push(12);
+		testStack.push(13);
+		testStack.push(14);
+		testStack.push(15);
+		testStack.push(16);
+		testStack.push(17);
+
         while (testStack.getSize()) {
 			std::cout << testStack.pop();
 		}
 		std::cout << std::endl;
 	
-
+	int *i = nullptr;
+	delete i;
 	return 0;
 }
